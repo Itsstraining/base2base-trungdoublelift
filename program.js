@@ -4,7 +4,7 @@ let temp = [];
 let temp2 = [];
 let KQ = 0;
 let output = " ";
-let temp3 = [];
+
 function binToY(N, X, Y) {
   switch (Y) {
     case Y = 10:
@@ -15,11 +15,21 @@ function binToY(N, X, Y) {
       output = "" + KQ
       break;
     case Y = 2:
-      XToBin(N, X);
-      for (let i = 0; i < temp.length; i++) {
-        temp2.push(temp[temp.length - (1 + i)]);
-        output = temp2.join("");
+      if(X==8){
+        XToBin(N, X);
+        for (let i = 0; i < temp.length; i++) {
+          temp2.push(temp[i]);
+          output = temp2.join("");
+        }
       }
+      else{
+        XToBin(N, X);
+        for (let i = 0; i < temp.length; i++) {
+          temp2.push(temp[temp.length - (1 + i)]);
+          output = temp2.join("");
+        }
+      }
+
   }
   temp = [];
   temp2 = [];
@@ -41,23 +51,27 @@ function XToBin(N, X) {
         }
       }
       break;
+
     case X = 8:
       let M = ""
       M = M + N;
-      let kq=0;
-      let temp4=[];
-       temp2 = M.split("");
+      let kq = 0;
+      let temp3 = [];
+      let temp4 = [];
+      temp2 = M.split("");
       for (let i = 0; i < temp2.length; i++) {
         temp3.push(parseInt(temp2[i]));
       }
-      for(let i=0;i<temp3.length;i++){
-        kq = kq + temp3[i] * Math.pow(8,temp3.length-[1+i]);
+      for (let i = 0; i < temp3.length; i++) {
+        kq = kq + temp3[i] * Math.pow(8, temp3.length - [1 + i]);
       }
-      XToBin(kq,10);
-      for(let i=0;i<temp.length;i++){
-        temp4.push(temp[temp.length-(1+i)])
+      XToBin(kq, 10);
+      for (let i = 0; i < temp.length; i++) {
+        temp4.push(temp[temp.length - (1 + i)])
       }
-      temp=temp4;
+      temp2 = [];
+      temp = temp4;
+      temp4 = [];
       break;
     case X = 2:
       let Z = ""

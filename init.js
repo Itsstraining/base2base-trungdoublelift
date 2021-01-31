@@ -2,7 +2,6 @@
 WARNING !!!
 DO NOT TOUCH THIS FILE
 */
-
 const main = require("./program");
 const readline = require("readline");
 
