@@ -10,7 +10,7 @@ function binToY(N, X, Y) {
     case Y = 10:
       XToBin(N, X);
       for (let i = 0; i < temp.length; i++) {
-        KQ = KQ + temp[temp.length-(1+i)] * Math.pow(2, i);
+        KQ = KQ + temp[temp.length - (1 + i)] * Math.pow(2, i);
       }
       output = "" + KQ
       break;
@@ -44,28 +44,29 @@ function XToBin(N, X) {
     case X = 8:
       let M = ""
       M = M + N;
-  
-      temp = M.split("");
+      let kq=0;
+      let temp4=[];
+       temp2 = M.split("");
+      for (let i = 0; i < temp2.length; i++) {
+        temp3.push(parseInt(temp2[i]));
+      }
+      for(let i=0;i<temp3.length;i++){
+        kq = kq + temp3[i] * Math.pow(8,temp3.length-[1+i]);
+      }
+      XToBin(kq,10);
+      for(let i=0;i<temp.length;i++){
+        temp4.push(temp[temp.length-(1+i)])
+      }
+      temp=temp4;
+      break;
+    case X = 2:
+      let Z = ""
+      Z = Z + N;
+      temp = Z.split("");
       for (let i = 0; i < temp.length; i++) {
         temp2.push(parseInt(temp[i]));
       }
-      for (let i = 0; i < temp2.length; i++) {
-        if (temp2[i] == 1) {
-        }
-        else {
-          temp3.push(XToBin(temp2[i], 10).join(""));
-        }
-      }
-      temp = temp3.join("");
-      break;
-    case X = 2:
-      let Z=""
-      Z=Z+N;
-      temp = Z.split("");
-      for(let i=0;i<temp.length;i++){
-        temp2.push(parseInt(temp[i]));
-      }
-      temp=temp2;
+      temp = temp2;
       break;
   }
 }
